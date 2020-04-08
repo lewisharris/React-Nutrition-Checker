@@ -1,0 +1,41 @@
+.nutri-container{
+    display: flex;
+    flex-direction: column;
+    margin:5px auto;
+    justify-content: space-between;
+}
+
+.nutri-header{
+line-height:1.5;
+padding:0;
+margin:0;
+color:#0D3B66;
+}
+
+.nutri-head{
+   width:100%;
+   background:#2EB6B1;
+   color:#0D3B66;
+   margin:0;
+   padding:5px 0;
+    }
+
+.nutri-text{
+    line-height:1.5;
+    padding:0;
+    margin:0;
+    color:#0D3B66;
+}
+
+.nutri-flex{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width:300px;
+    padding:0px;
+    background:#FAFBFB;
+}
+
+.nutri-segment {
+    margin:10px;
+}

@@ -1,0 +1,60 @@
+.info-head{
+    width:100%;
+    background:#2EB6B1
+}
+
+.food-header{
+    padding:10px;
+}
+
+.info-text{
+    width:100%;
+    background:#FAFBFB;
+    color:#0D3B66;
+    padding:0;
+    margin:0; 
+}
+
+.card-image{
+    height:50px;
+}
+
+.flip-btn{
+    background:#0D3B66;
+    color:#FAFBFB;
+    padding:5px;
+    width:120px;
+    margin:10px auto;
+    cursor:pointer;
+}
+
+.weight-input-container{
+    background:#0D3B66;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:280px;
+    height:40px;
+    margin:10px auto;
+}
+
+.weight-input{
+width:70px;
+font-size:20px;
+text-align: center;
+margin: 0px;
+border:none;
+cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+
+.weight-label{
+    font-size:18px;
+    text-align: center;
+    margin: 0px 10px;
+    line-height:40px;
+}
