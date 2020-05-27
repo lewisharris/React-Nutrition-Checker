@@ -58,6 +58,7 @@ class Container extends React.Component {
                         this.setState({noresults:true})
                         }
                         )
+                this.setState({search:''})
             }
     };
 
@@ -76,6 +77,13 @@ class Container extends React.Component {
             justifyContent:'center',
             margin:'30px auto',
             width:'100%'
+        }
+
+        const noResultsStyle = {
+            margin: '30px auto',
+            fontSize:'24px',
+            color:'#0D3B66',
+            textAlign:'center'
         }
         
         //Filter the list of foods to match the value of the input field and return into new array
@@ -104,7 +112,7 @@ class Container extends React.Component {
                                 getFood = {this.getFood}/>
 
                     {(this.state.loading? <Loader/> : null)}
-                    {(this.state.noresults? <div>No Results</div> : null)}
+                    {(this.state.noresults? <div style={noResultsStyle}>No Results</div> : null)}
 
 
                     <div style={cardContainerStyle}>

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/React-Nutrition-Checker/precache-manifest.69753d9d7851eff8be79e392bfcd7c97.js"
+  "/React-Nutrition-Checker/precache-manifest.2002cc06ff0be98db7d2078614f769fc.js"
 );
 
 self.addEventListener('message', (event) => {
