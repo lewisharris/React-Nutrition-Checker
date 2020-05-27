@@ -1,18 +1,20 @@
 import React from 'react';
+import headerImage from "./images/pork.jpeg";
 
 const headerStyle = {
     color:'#0D3B66',
     textAlign:'center',
     padding:20,
-    backgroundImage:'url("images/spices.jpg")',
+    backgroundImage: `url(${headerImage})`,
     backgroundPosition:'center',
+    backgroundSize:'cover',
     backgroundRepeat:'no-repeat',
     height:300
 }
 
 const mainHeaderContainerStyle = {
     maxWidth:700,
-    background:'rgb(255,255,255, 0.4)',
+    background:'rgb(255,255,255, 0.7)',
     margin:'0px auto',
 }
 

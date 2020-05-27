@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import SearchBar from './SearchBar';
 import Header from './Header';
+import Loader from './Loader';
 
 class Container extends React.Component {
     constructor(props){
@@ -10,7 +11,9 @@ class Container extends React.Component {
             foodData: [],
             search:'',
             intro:true,
-            content:false
+            content:false,
+            loading:false,
+            noresults:false
         }
         this.changeInput = this.changeInput.bind(this);
         this.getFood = this.getFood.bind(this);
@@ -41,14 +44,20 @@ class Container extends React.Component {
             const query = this.state.search;
             const URL = `https://api.edamam.com/api/food-database/parser?nutrition-type=logging&ingr=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
             if(query !== ''){
+                this.setState({noresults:false})
+                this.setState({loading:true})
                 await fetch(URL)
                     .then(response => {return response.json()})
                     .then(data => {
                         const list = data.hints.map(item => {return item})
-                        this.setState({foodData: list });
-                    }
+                        this.setState({foodData: list});
+                        this.setState({loading:false})
+                    })
+                    .catch( () => {
+                        this.setState({loading:false})
+                        this.setState({noresults:true})
+                        }
                         )
-                    .catch( () => {return ''} )
             }
     };
 
@@ -65,7 +74,7 @@ class Container extends React.Component {
             flexDirection:'row',
             flexWrap:'wrap',
             justifyContent:'center',
-            margin:'0px auto',
+            margin:'30px auto',
             width:'100%'
         }
         
@@ -93,6 +102,11 @@ class Container extends React.Component {
                     <Header/>
                     <SearchBar  changeInput = {this.changeInput}
                                 getFood = {this.getFood}/>
+
+                    {(this.state.loading? <Loader/> : null)}
+                    {(this.state.noresults? <div>No Results</div> : null)}
+
+
                     <div style={cardContainerStyle}>
                         {renderCards}
                     </div>

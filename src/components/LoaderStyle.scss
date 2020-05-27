@@ -1,0 +1,38 @@
+.loader{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: center;
+    margin:30px auto;
+}
+
+@mixin loader-circle{
+    width:25px;
+    height:25px;
+    margin:3px;
+    border-radius:500px;
+};
+
+.circle-one{
+    @include loader-circle;
+    background:#D7263D;
+    animation: bounce 750ms linear 200ms infinite forwards;
+}
+
+.circle-two{
+    @include loader-circle;
+    background:#448FA3;
+    animation: bounce 750ms linear 300ms infinite forwards;
+}
+
+.circle-three{
+    @include loader-circle;
+    background:#02182B;
+    animation: bounce 750ms linear 400ms infinite forwards;
+}
+
+@keyframes bounce {
+    0%{}
+    50%{opacity:0;}
+    100%{}
+}

@@ -33,7 +33,8 @@ class Card extends React.Component {
             textAlign:'center',
             display:'flex',
             flexDirection:'column',
-            padding:0
+            padding:0,
+            
         }
 
         return(
